@@ -1,0 +1,6 @@
+public Order{
+  String name; double price; ArrayList orderItems;
+  public Order(String name, double price, ArrayList orderItems){
+    
+  }
+}
