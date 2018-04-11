@@ -10,5 +10,38 @@ public class MenuItem{
     DRINK, SIDE, ENTREE;
 
   }
+
+public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+public String getDescription() {
+	return description;
+}
+
+public void setDescription(String description) {
+	this.description = description;
+}
+
+public itemType getType() {
+	return type;
+}
+
+public void setType(itemType type) {
+	this.type = type;
+}
+
+public double getPrice() {
+	return price;
+}
+
+public void setPrice(double price) {
+	this.price = price;
+}
+  
   
 }
