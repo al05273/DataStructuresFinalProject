@@ -25,12 +25,17 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-public RestaurantGUI extends Application{
+public class RestaurantGUI extends Application{
   public static void main(String[] args) {
 
   }
   public RestaurantGUI(){
 
   }
+@Override
+public void start(Stage arg0) throws Exception {
+	// TODO Auto-generated method stub
+	
+}
 
 }

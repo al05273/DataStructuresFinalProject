@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public Order{
+public class Order{
   String name; double price; ArrayList orderItems;
   public Order(String name, double price, ArrayList orderItems){
 
