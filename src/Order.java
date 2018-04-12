@@ -71,6 +71,7 @@ public void start(Stage primaryStage) throws Exception {
 	
 }
  public VBox showOrder(){
+	 separateItems();
 	 Text oName = new Text(this.getName());
 	 Text[] eItems = new Text[this.getEntreeList().size()];
 	 Text[] sItems = new Text[this.getSideList().size()];

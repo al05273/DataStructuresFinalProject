@@ -14,9 +14,6 @@ public class OrderManagerMain{
 //GUI will be implemented in other files
 //...I guess?
 
-  public static void main(String[] args) {
-
-  }
 
 
 
