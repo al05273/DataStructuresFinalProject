@@ -6,7 +6,7 @@ public class Menu {
 	private MenuItem chkStrip = new MenuItem("Chicken Strip", 7.25, "ENTREE");
 	private MenuItem salad = new MenuItem("Salad", 9.5, "ENTREE");
 	
-	private MenuItem fries = new MenuItem("Waffle Fries", 7.5, "SIDE");
+	private MenuItem fries;
 	private MenuItem frtCup = new MenuItem("Fruit Cup", 7.5, "SIDE");
 
 	
@@ -15,7 +15,7 @@ public class Menu {
 	private MenuItem coke = new MenuItem("Coke", 7.5, "DRINK");
 	
 	public Menu() {
-		
+		this.fries = new MenuItem("Waffle Fries", 7.5, "SIDE");
 	}
 
 	public MenuItem getChkNug() {
@@ -34,7 +34,7 @@ public class Menu {
 		return salad;
 	}
 
-	public MenuItem getFries() {
+	public  MenuItem getFries() {
 		return fries;
 	}
 

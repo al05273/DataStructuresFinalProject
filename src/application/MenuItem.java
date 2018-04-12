@@ -5,7 +5,9 @@ public class MenuItem{
   private itemType type;
   private double price;
   public MenuItem(String name, double price, String type){
-
+	  this.name = name;
+	  this.price = price;
+	//  this.setType(type); , String type
   }
 
   public enum itemType{
@@ -33,8 +35,10 @@ public itemType getType() {
 	return type;
 }
 
-public void setType(itemType type) {
-	this.type = type;
+public void setType(String type) {
+	
+	this.type.valueOf(type.toUpperCase());
+	
 }
 
 public double getPrice() {

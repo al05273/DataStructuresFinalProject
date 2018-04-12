@@ -2,9 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -86,17 +84,18 @@
                         <Image url="@images/salad.png" />
                      </image>
                   </ImageView>
-                  <RadioButton fx:id="sandwich" mnemonicParsing="false" onAction="#entreeSelect" prefHeight="14.0" prefWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="entreeGroup" />
-                     </toggleGroup></RadioButton>
-                  <RadioButton fx:id="nuggets" mnemonicParsing="false" onAction="#entreeSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$entreeGroup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <RadioButton fx:id="strips" mnemonicParsing="false" onAction="#entreeSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$entreeGroup" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <RadioButton fx:id="salad" mnemonicParsing="false" onAction="#entreeSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$entreeGroup" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusChkSand" mnemonicParsing="false" onAction="#plusChkSandClick" text="+" GridPane.rowIndex="2" />
+                  <Button fx:id="plusChkNug" mnemonicParsing="false" onAction="#plusChkNugClick" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="plusChkStrip" mnemonicParsing="false" onAction="#plusChkStripClick" text="+" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button fx:id="plusSalad" mnemonicParsing="false" onAction="#plusSaladClick" text="+" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Button fx:id="minusChkSand" mnemonicParsing="false" onAction="#minusChkSandClick" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="minusChkNug" mnemonicParsing="false" onAction="#minusChkNugClick" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="minusChkStrip" mnemonicParsing="false" onAction="#minusChkStripClick" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="minusSalad" mnemonicParsing="false" onAction="#minusSaladClick" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 
                </children>
             </GridPane>
-            <GridPane layoutX="-42.0" layoutY="278.0" prefHeight="149.0" prefWidth="462.0">
+            <GridPane layoutX="29.0" layoutY="277.0" prefHeight="149.0" prefWidth="462.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -129,11 +128,10 @@
                         <Image url="@images/fruit.png" />
                      </image>
                   </ImageView>
-                  <RadioButton fx:id="fries" mnemonicParsing="false" onAction="#sideSelect" prefHeight="14.0" prefWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="sideGroup" />
-                     </toggleGroup></RadioButton>
-                  <RadioButton fx:id="fruit" mnemonicParsing="false" onAction="#sideSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$sideGroup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusFries" mnemonicParsing="false" onAction="#plusFriesClick" text="+" GridPane.rowIndex="2" />
+                  <Button fx:id="minusFries" mnemonicParsing="false" onAction="#minusFriesClick" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusFruit" mnemonicParsing="false" onAction="#plusfrtCupClick" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="minusFruit" mnemonicParsing="false" onAction="#minusFrtCupClick" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                </children>
             </GridPane>
             <GridPane layoutY="452.0" prefHeight="170.0" prefWidth="483.0">
@@ -176,12 +174,12 @@
                         <Image url="@images/lemonade.png" />
                      </image>
                   </ImageView>
-                  <RadioButton fx:id="coke" mnemonicParsing="false" onAction="#drinkSelect" prefHeight="14.0" prefWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="drinkGroup" />
-                     </toggleGroup></RadioButton>
-                  <RadioButton fx:id="tea" mnemonicParsing="false" onAction="#drinkSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$drinkGroup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <RadioButton fx:id="lemonade" mnemonicParsing="false" onAction="#drinkSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$drinkGroup" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusCoke" mnemonicParsing="false" onAction="#plusCokeClick" text="+" GridPane.rowIndex="2" />
+                  <Button fx:id="plusTea" mnemonicParsing="false" onAction="#plusSwTeaClick" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="plusLemonade" mnemonicParsing="false" onAction="#plusLemonadeClick" text="+" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button fx:id="minusCoke" mnemonicParsing="false" onAction="#minusCokeClick" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="minusTea" mnemonicParsing="false" onAction="#minusSwTeaClick" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="minusLemonade" mnemonicParsing="false" onAction="#minusLemonadeClick" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                </children>
             </GridPane>
             <Text layoutX="134.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chick-fil-A Menu" wrappingWidth="315.73666763305664">
