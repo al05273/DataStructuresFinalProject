@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -19,12 +20,20 @@ String orderName;
 String entreePick;
 String sidePick;
 String drinkPick;
+private Menu menu = new Menu();
+
+static LinkedList<MenuItem> orderList = new LinkedList<MenuItem>();
 
 
-static ArrayList<String> order = new ArrayList<String>();
 public void entreeSelect() {
 	RadioButton selectedRadioButton = (RadioButton) entreeGroup.getSelectedToggle();
 	entreePick = selectedRadioButton.getId();
+	
+	
+	orderList.add(menu.getFries());
+	
+	orderList.removeFirstOccurrence(menu.getFries());
+	
 }
 public void sideSelect() {
 	RadioButton selectedRadioButton = (RadioButton) sideGroup.getSelectedToggle();
@@ -39,9 +48,12 @@ public String getName() {
 	
 }
 public void handleButtonClick() {
+	
 	order.add(entreePick);order.add(sidePick);order.add(drinkPick);
 	System.out.println(order);
 	System.out.println(getName());
+	
+	
 	
 }
 public void handleResetClick() {

@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import javafx.application.Application;
 import javafx.scene.layout.VBox;
@@ -10,11 +11,11 @@ import javafx.stage.Stage;
 public class Order extends Application{
   private String name;
   private double price;
-  private ArrayList <MenuItem> orderItems;
+  private LinkedList <MenuItem> orderItems;
   private ArrayList <MenuItem> drinkList = new ArrayList();
   private ArrayList <MenuItem> sideList = new ArrayList();
   private ArrayList <MenuItem> entreeList = new ArrayList();
-  public Order(String name, double price, ArrayList <MenuItem> orderItems){
+  public Order(String name, double price, LinkedList <MenuItem> orderItems){
 
   }
   public void setName(String name){
@@ -23,7 +24,7 @@ public class Order extends Application{
   public void setPrice(double price){
     this.price = price;
   }
-  public void setOrderItems(ArrayList<MenuItem> orderItems){
+  public void setOrderItems(LinkedList<MenuItem> orderItems){
     this.orderItems = orderItems;
   }
   
@@ -33,7 +34,7 @@ public String getName() {
 public double getPrice() {
 	return price;
 }
-public ArrayList<MenuItem> getOrderItems() {
+public LinkedList<MenuItem> getOrderItems() {
 	return orderItems;
 }
 
