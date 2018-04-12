@@ -53,7 +53,7 @@ public void handleButtonClick() {
 		cost+=orderList.get(i).getPrice();
 	}
 	Order newOrder = new Order(getName(), cost, orderList);
-	
+	System.out.println(newOrder.getName());
 
 	
 	
@@ -72,6 +72,7 @@ public void minusChkNugClick(){
 }}
 public void plusChkNugClick(){
 	orderList.add(menu.getChkNug());
+	
 	
 }
 

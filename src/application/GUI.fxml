@@ -37,7 +37,7 @@
                   <Font size="23.0" />
                </font>
             </Text>
-            <GridPane layoutY="89.0" prefHeight="149.0" prefWidth="559.0">
+            <GridPane layoutY="88.0" prefHeight="170.0" prefWidth="561.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -47,6 +47,7 @@
                <rowConstraints>
                   <RowConstraints maxHeight="86.39998168945313" minHeight="10.0" prefHeight="86.39998168945313" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="27.800001525878905" minHeight="0.0" prefHeight="21.20000610351562" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="27.800001525878905" minHeight="10.0" prefHeight="13.399993896484375" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="27.800001525878905" minHeight="10.0" prefHeight="13.399993896484375" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
@@ -84,14 +85,14 @@
                         <Image url="@images/salad.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="plusChkSand" mnemonicParsing="false" onAction="#plusChkSandClick" text="+" GridPane.rowIndex="2" />
-                  <Button fx:id="plusChkNug" mnemonicParsing="false" onAction="#plusChkNugClick" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button fx:id="plusChkStrip" mnemonicParsing="false" onAction="#plusChkStripClick" text="+" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Button fx:id="plusSalad" mnemonicParsing="false" onAction="#plusSaladClick" text="+" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <Button fx:id="minusChkSand" mnemonicParsing="false" onAction="#minusChkSandClick" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="minusChkNug" mnemonicParsing="false" onAction="#minusChkNugClick" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="minusChkStrip" mnemonicParsing="false" onAction="#minusChkStripClick" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="minusSalad" mnemonicParsing="false" onAction="#minusSaladClick" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusChkSand" mnemonicParsing="false" onAction="#plusChkSandClick" prefHeight="26.0" prefWidth="43.0" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusChkNug" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#plusChkNugClick" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusChkStrip" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#plusChkStripClick" text="+" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusSalad" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#plusSaladClick" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="minusChkSand" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#minusChkSandClick" prefHeight="26.0" prefWidth="43.0" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="minusChkNug" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#minusChkNugClick" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="minusChkStrip" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#minusChkStripClick" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="minusSalad" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#minusSaladClick" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
 
                </children>
             </GridPane>
@@ -103,6 +104,7 @@
                <rowConstraints>
                   <RowConstraints maxHeight="93.6" minHeight="10.0" prefHeight="89.59996337890625" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="26.39999999999999" minHeight="0.0" prefHeight="18.400000000000006" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.400000000000006" minHeight="10.0" prefHeight="34.400000000000006" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="34.400000000000006" minHeight="10.0" prefHeight="34.400000000000006" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
@@ -128,13 +130,13 @@
                         <Image url="@images/fruit.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="plusFries" mnemonicParsing="false" onAction="#plusFriesClick" text="+" GridPane.rowIndex="2" />
-                  <Button fx:id="minusFries" mnemonicParsing="false" onAction="#minusFriesClick" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="plusFruit" mnemonicParsing="false" onAction="#plusfrtCupClick" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button fx:id="minusFruit" mnemonicParsing="false" onAction="#minusFrtCupClick" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusFries" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#plusFriesClick" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="minusFries" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#minusFriesClick" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="plusFruit" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#plusfrtCupClick" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="minusFruit" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#minusFrtCupClick" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <GridPane layoutY="452.0" prefHeight="170.0" prefWidth="483.0">
+            <GridPane layoutY="452.0" prefHeight="194.0" prefWidth="482.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -143,7 +145,8 @@
                <rowConstraints>
                   <RowConstraints maxHeight="111.39999389648438" minHeight="10.0" prefHeight="111.39999389648438" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="101.60000000000001" minHeight="0.0" prefHeight="24.00000610351563" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="83.60001220703126" minHeight="10.0" prefHeight="14.000036621093756" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="83.60001220703126" minHeight="10.0" prefHeight="30.800024414062506" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="83.60001220703126" minHeight="10.0" prefHeight="17.999975585937506" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <ImageView>
@@ -174,12 +177,12 @@
                         <Image url="@images/lemonade.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="plusCoke" mnemonicParsing="false" onAction="#plusCokeClick" text="+" GridPane.rowIndex="2" />
-                  <Button fx:id="plusTea" mnemonicParsing="false" onAction="#plusSwTeaClick" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button fx:id="plusLemonade" mnemonicParsing="false" onAction="#plusLemonadeClick" text="+" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Button fx:id="minusCoke" mnemonicParsing="false" onAction="#minusCokeClick" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="minusTea" mnemonicParsing="false" onAction="#minusSwTeaClick" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="minusLemonade" mnemonicParsing="false" onAction="#minusLemonadeClick" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusCoke" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#plusCokeClick" text="+" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusTea" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#plusSwTeaClick" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="plusLemonade" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#plusLemonadeClick" text="+" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="minusCoke" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#minusCokeClick" text="-" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="minusTea" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#minusSwTeaClick" text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button fx:id="minusLemonade" maxHeight="26.0" maxWidth="43.0" mnemonicParsing="false" onAction="#minusLemonadeClick" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
                </children>
             </GridPane>
             <Text layoutX="134.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chick-fil-A Menu" wrappingWidth="315.73666763305664">
