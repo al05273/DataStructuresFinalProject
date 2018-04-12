@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="800.0" prefHeight="-1.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutY="1.0" prefHeight="800.0" prefWidth="584.0" style="-fx-background-color: WHITE;">
+         <children>
+            <Text layoutX="13.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENTREE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text layoutX="16.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIDE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text layoutX="18.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DRINK">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <GridPane layoutY="89.0" prefHeight="149.0" prefWidth="559.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="86.39998168945313" minHeight="10.0" prefHeight="86.39998168945313" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="27.800001525878905" minHeight="0.0" prefHeight="21.20000610351562" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="27.800001525878905" minHeight="10.0" prefHeight="13.399993896484375" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@test1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@test2.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Sandwich " GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Nuggets" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Strips" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salad" wrappingWidth="47.75860595703125" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="88.0" fitWidth="123.0" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@images/sandwich.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="90.0" fitWidth="134.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@images/nuggets.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="89.0" fitWidth="130.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@images/strips.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="87.0" fitWidth="125.0" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@images/salad.png" />
+                     </image>
+                  </ImageView>
+                  <RadioButton fx:id="sandwich" mnemonicParsing="false" onAction="#entreeSelect" prefHeight="14.0" prefWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="entreeGroup" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="nuggets" mnemonicParsing="false" onAction="#entreeSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$entreeGroup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="strips" mnemonicParsing="false" onAction="#entreeSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$entreeGroup" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="salad" mnemonicParsing="false" onAction="#entreeSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$entreeGroup" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+
+               </children>
+            </GridPane>
+            <GridPane layoutX="-42.0" layoutY="278.0" prefHeight="149.0" prefWidth="462.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="93.6" minHeight="10.0" prefHeight="89.59996337890625" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="26.39999999999999" minHeight="0.0" prefHeight="18.400000000000006" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.400000000000006" minHeight="10.0" prefHeight="34.400000000000006" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@test1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@test2.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fries" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fruit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="94.0" fitWidth="118.0" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@images/fries.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="87.0" fitWidth="113.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@images/fruit.png" />
+                     </image>
+                  </ImageView>
+                  <RadioButton fx:id="fries" mnemonicParsing="false" onAction="#sideSelect" prefHeight="14.0" prefWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sideGroup" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="fruit" mnemonicParsing="false" onAction="#sideSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$sideGroup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <GridPane layoutY="452.0" prefHeight="170.0" prefWidth="483.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="111.39999389648438" minHeight="10.0" prefHeight="111.39999389648438" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.60000000000001" minHeight="0.0" prefHeight="24.00000610351563" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="83.60001220703126" minHeight="10.0" prefHeight="14.000036621093756" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@test1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@test2.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Coke" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sweet Tea" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lemonade" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="100.0" fitWidth="49.0" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@images/coke.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="106.0" fitWidth="106.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@images/tea.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="119.0" fitWidth="119.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@images/lemonade.png" />
+                     </image>
+                  </ImageView>
+                  <RadioButton fx:id="coke" mnemonicParsing="false" onAction="#drinkSelect" prefHeight="14.0" prefWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="drinkGroup" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="tea" mnemonicParsing="false" onAction="#drinkSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$drinkGroup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="lemonade" mnemonicParsing="false" onAction="#drinkSelect" prefHeight="14.0" prefWidth="0.0" toggleGroup="$drinkGroup" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <Text layoutX="134.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chick-fil-A Menu" wrappingWidth="315.73666763305664">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </Text>
+            <Button fx:id="button" layoutX="13.0" layoutY="732.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="43.0" prefWidth="387.0" text="Submit" />
+            <Button fx:id="reset" layoutX="408.0" layoutY="732.0" mnemonicParsing="false" onAction="#handleResetClick" prefHeight="43.0" prefWidth="165.0" text="New Order" />
+            <TextField fx:id="name" layoutX="229.0" layoutY="659.0" prefHeight="43.0" prefWidth="316.0" promptText="Name" />
+            <Text layoutX="40.0" layoutY="687.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME FOR ORDER:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

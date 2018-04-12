@@ -2,6 +2,7 @@ public class MenuItem{
   private String name, description;
   private itemType type;
   private double price;
+  
   public MenuItem(String name, double price, String type){
 
   }
@@ -31,8 +32,9 @@ public itemType getType() {
 	return type;
 }
 
-public void setType(itemType type) {
-	this.type = type;
+public void setType(String type) {
+	
+	this.type.valueOf(type.toUpperCase());
 }
 
 public double getPrice() {

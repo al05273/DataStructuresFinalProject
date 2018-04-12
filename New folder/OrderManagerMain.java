@@ -9,14 +9,13 @@ import java.util.Random;
 
 
 public class OrderManagerMain{
-
-//Contains main method and most backend work.
-//GUI will be implemented in other files
-//...I guess?
+	
 
   public static void main(String[] args) {
+	  
 
   }
+
 
 
 
