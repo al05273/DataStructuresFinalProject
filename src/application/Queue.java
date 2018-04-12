@@ -1,4 +1,6 @@
-package FinalProject;
+
+package application;
+
 
 public class Queue {
 	    Node front, rear;

@@ -1,3 +1,5 @@
+package application;
+
 public class MenuItem{
   private String name, description;
   private itemType type;

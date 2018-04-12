@@ -1,4 +1,5 @@
-package FinalProject;
+package application;
+
 
 public class CFAQueue {
 	

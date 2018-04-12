@@ -1,3 +1,4 @@
+package application;
 
 public class Menu {
 	private MenuItem chkNug = new MenuItem("Chicken Nugget", 6.50, "ENTREE");
