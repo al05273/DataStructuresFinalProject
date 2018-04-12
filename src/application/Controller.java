@@ -1,4 +1,4 @@
-
+package application;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,7 +22,6 @@ String drinkPick;
 
 
 static ArrayList<String> order = new ArrayList<String>();
-
 public void entreeSelect() {
 	RadioButton selectedRadioButton = (RadioButton) entreeGroup.getSelectedToggle();
 	entreePick = selectedRadioButton.getId();
