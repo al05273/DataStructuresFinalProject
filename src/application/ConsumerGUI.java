@@ -29,9 +29,12 @@ public class ConsumerGUI extends Application{
 		static StackPane pane;
 		static Scene scene;
 		public static int counter = 1;
+		static int counter2 = 5;
 		static Stage primaryStage2;
 		static Rectangle q1,q2,q3,q4,q5, background;
 		static HBox qItems;
+		static Text nameText1,nameText2,nameText3,nameText4,nameText5;
+		static String temp1,temp2,temp3,temp4,temp5;
 		
 		public static void main(String[] args) {
 			launch();
@@ -39,6 +42,13 @@ public class ConsumerGUI extends Application{
 		
 		@Override
 		public void start(Stage primaryStage2) throws Exception {
+			
+			Controller.q.enqueue("Joe");
+			Controller.q.enqueue("Jan");
+			Controller.q.enqueue("Jill");
+			Controller.q.enqueue("Tom");
+			Controller.q.enqueue("Mike");
+			
 			//Background
 			background = new Rectangle(1000, 600);
 			background.setFill(Color.WHITE);
@@ -67,26 +77,38 @@ public class ConsumerGUI extends Application{
 			qItems.setAlignment(Pos.BASELINE_LEFT);
 			
 			//Text
-			Controller.q.enqueue("Joe");
-			Controller.q.enqueue("Jan");
-			Controller.q.enqueue("Jill");
-			Controller.q.enqueue("Jack");
-			Controller.q.enqueue("Fred");
-			Text nameText1 = new Text(Controller.q.front.key);
+			
+			
+			if(Controller.q.front.key != null) {
+			nameText1 = new Text(Controller.q.front.key);
 			nameText1.setX(80);
-			nameText1.setY(100);
-			Text nameText2 = new Text(Controller.q.front.next.key);
+			nameText1.setY(200);
+			nameText1.setFont(Font.font(30));
+			}
+			if(Controller.q.front.next.key != null) {
+			nameText2 = new Text(Controller.q.front.next.key);
 			nameText2.setX(280);
-			nameText2.setY(100);
-			Text nameText3 = new Text(Controller.q.front.next.next.key);
+			nameText2.setY(200);
+			nameText2.setFont(Font.font(30));
+			}
+			if(Controller.q.front.next.next.key != null) {
+			nameText3 = new Text(Controller.q.front.next.next.key);
 			nameText3.setX(480);
-			nameText3.setY(100);
-			Text nameText4 = new Text(Controller.q.front.next.next.next.key);
+			nameText3.setY(200);
+			nameText3.setFont(Font.font(30));
+			}
+			if(Controller.q.front.next.next.next.key != null) {
+			nameText4 = new Text(Controller.q.front.next.next.next.key);
 			nameText4.setX(680);
-			nameText4.setY(100);
-			Text nameText5 = new Text(Controller.q.front.next.next.next.next.key);
+			nameText4.setY(200);
+			nameText4.setFont(Font.font(30));
+			}
+			if(Controller.q.front.next.next.next.next.key != null) {
+			nameText5 = new Text(Controller.q.front.next.next.next.next.key);
 			nameText5.setX(880);
-			nameText5.setY(100);
+			nameText5.setY(200);
+			nameText5.setFont(Font.font(30));
+			}
 			
 			String temp1 = nameText1.getText();
 			String temp2 = nameText2.getText();
@@ -138,9 +160,9 @@ public class ConsumerGUI extends Application{
 				}
 			});
 			
-			//Dequeue button
-			Button deQueueBTN = new Button("Dequeue");
-			deQueueBTN.setOnAction(new EventHandler<ActionEvent>() {
+			//Completion button
+			Button completedBTN = new Button("Order Complete");
+			completedBTN.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent e) {
 					
 					if(counter == 6) {
@@ -163,8 +185,40 @@ public class ConsumerGUI extends Application{
 				}
 				});
 			
+			Button deQueueBTN = new Button("Dequeue");
+			deQueueBTN.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent e) {
+				
+					if (q5.getFill() == Color.GREEN) {
+						qItems.getChildren().remove(q5);
+						mainPane.getChildren().remove(nameText5);
+						q5.setFill(Color.RED);
+					}else if (q4.getFill() == Color.GREEN) {
+						qItems.getChildren().remove(q4);
+						mainPane.getChildren().remove(nameText4);
+						q4.setFill(Color.RED);
+					} else if (q3.getFill() == Color.GREEN) {
+						qItems.getChildren().remove(q3);
+						mainPane.getChildren().remove(nameText3);
+						q3.setFill(Color.RED);
+					} else if (q2.getFill() == Color.GREEN) {
+						qItems.getChildren().remove(q2);
+						mainPane.getChildren().remove(nameText2);
+						q2.setFill(Color.RED);
+					} else if(q1.getFill() == Color.GREEN) {
+						qItems.getChildren().remove(q1);
+						mainPane.getChildren().remove(nameText1);
+						q1.setFill(Color.RED);
+					} 
+					
+					
+					
+					
+				}
+				});
+			
 			HBox buttons = new HBox(20);
-			buttons.getChildren().addAll(enQueueBTN, deQueueBTN);
+			buttons.getChildren().addAll(enQueueBTN, completedBTN, deQueueBTN);
 			buttons.setAlignment(Pos.BOTTOM_CENTER);
 			
 			mainPane = new Pane(background, qItems, buttons);
