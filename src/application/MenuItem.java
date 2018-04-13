@@ -1,11 +1,14 @@
 package application;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class MenuItem{
   private String name, description;
   private itemType type;
   private double price;
+  private SimpleStringProperty simpleName;
   public MenuItem(String name, double price, String type){
-	  this.name = name;
+	  this.setName(name);
 	  this.price = price;
 	  this.setType(type); 
   }
@@ -20,6 +23,7 @@ public String getName() {
 }
 
 public void setName(String name) {
+	this.simpleName = new SimpleStringProperty(name);
 	this.name = name;
 }
 
