@@ -31,17 +31,23 @@ String orderName;
 String entreePick;
 String sidePick;
 String drinkPick;
+static Queue q = new Queue();
+static Order newOrder;
 @FXML private TableView<MenuItem> currentOrder;
 @FXML private TableColumn<MenuItem, String> itemNameCol;
 @FXML private TableColumn<MenuItem, String> itemPriceCol;
+@FXML private TableView<String> qView;
+@FXML private TableColumn<String, String> qNameCol;
+@FXML private TableColumn<String, String> qNumCol;
 public Text totalText;
 public VBox TotalBox;
 ObservableList<MenuItem> obsOrderList = FXCollections.observableArrayList();
-
+ObservableList<String> obsQueueName = FXCollections.observableArrayList();
 
 private Menu menu = new Menu();
 
  LinkedList<MenuItem> orderList = new LinkedList<MenuItem>();
+ LinkedList<String> queueList = new LinkedList<String>();
 
 
 public String getName() {
@@ -58,10 +64,12 @@ public double calcTotal() {
 }
 public void handleButtonClick() {
 
-	Order newOrder = new Order(getName(), calcTotal(), this.orderList);
+	newOrder = new Order(getName(), calcTotal(), this.orderList);
 	//System.out.println(newOrder.getName());
 	orderList.clear();
 	name.clear();
+	addName();
+	System.out.println(newOrder.getName());
 	
 	
 }
@@ -174,6 +182,14 @@ public void itemRemoved() {
 	
 	currentOrder.setItems(removeItemObs());
 }
+
+public void addName() {
+	queueList.add(newOrder.getName());
+}
+
+public void nameAdded() {
+	qView.setItems(obsQueueName);
+}
 @Override
 public void initialize(java.net.URL location, ResourceBundle resources) {
 	
@@ -182,7 +198,11 @@ public void initialize(java.net.URL location, ResourceBundle resources) {
 	itemNameCol.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
 	itemPriceCol.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("price"));
 	
+	qNameCol.setCellValueFactory(new PropertyValueFactory<String, String>("Customer Name"));
+	qNumCol.setCellValueFactory(new PropertyValueFactory<String, String>("Queue #"));
+	
 }
+
 public ObservableList<MenuItem> getCurrentOrderObs(){
 	
 		obsOrderList.add(orderList.getLast());
@@ -197,5 +217,11 @@ public ObservableList<MenuItem> removeItemObs(){
 		obsOrderList.add(orderList.get(i));
 	}
 	return obsOrderList;
+}
+
+public ObservableList<String> getQueueName(){
+	obsQueueName.add(queueList.getLast());
+	
+	return obsQueueName;
 }
 }
