@@ -7,15 +7,15 @@ public class Menu {
 	private MenuItem salad = new MenuItem("Salad", 9.5, "ENTREE");
 	
 	private MenuItem fries;
-	private MenuItem frtCup = new MenuItem("Fruit Cup", 7.5, "SIDE");
+	private MenuItem frtCup = new MenuItem("Fruit Cup", 2.5, "SIDE");
 
 	
-	private MenuItem swTea = new MenuItem("Sweet Tea", 7.5, "DRINK");
-	private MenuItem lemonade = new MenuItem("Lemonade", 7.5, "DRINK");
-	private MenuItem coke = new MenuItem("Coke", 7.5, "DRINK");
+	private MenuItem swTea = new MenuItem("Sweet Tea", 1.5, "DRINK");
+	private MenuItem lemonade = new MenuItem("Lemonade", 1.5, "DRINK");
+	private MenuItem coke = new MenuItem("Coke", 1.5, "DRINK");
 	
 	public Menu() {
-		this.fries = new MenuItem("Waffle Fries", 7.5, "SIDE");
+		this.fries = new MenuItem("Waffle Fries", 1.5, "SIDE");
 	}
 
 	public MenuItem getChkNug() {

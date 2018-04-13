@@ -59,7 +59,7 @@ public double calcTotal() {
 public void handleButtonClick() {
 
 	Order newOrder = new Order(getName(), calcTotal(), this.orderList);
-	System.out.println(newOrder.getName());
+	//System.out.println(newOrder.getName());
 	orderList.clear();
 	name.clear();
 	
