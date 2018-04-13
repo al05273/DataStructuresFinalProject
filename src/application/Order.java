@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 public class Order extends Application{
   private String name;
   private double price;
+  private SimpleStringProperty simpleName;
   private LinkedList <MenuItem> orderItems;
   private ArrayList <MenuItem> drinkList = new ArrayList();
   private ArrayList <MenuItem> sideList = new ArrayList();
@@ -18,13 +20,14 @@ public class Order extends Application{
   
   
   
-  public Order(String name, double price, LinkedList <MenuItem> orderItems){
-	  this.name = name;
+  public Order(String name, double price, LinkedList<MenuItem> orderItems){
+	  this.setName(name);
 	  this.price = price;
 	  this.orderItems = orderItems;
   }
   public void setName(String name){
-    this.name = name;
+	  this.simpleName = new SimpleStringProperty(name);
+		this.name = name;
   }
   public void setPrice(double price){
     this.price = price;

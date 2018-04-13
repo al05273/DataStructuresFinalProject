@@ -36,18 +36,18 @@ static Order newOrder;
 @FXML private TableView<MenuItem> currentOrder;
 @FXML private TableColumn<MenuItem, String> itemNameCol;
 @FXML private TableColumn<MenuItem, String> itemPriceCol;
-@FXML private TableView<String> qView;
-@FXML private TableColumn<String, String> qNameCol;
-@FXML private TableColumn<String, String> qNumCol;
+@FXML private TableView<Order> qView;
+@FXML private TableColumn<Order, String> qNameCol;
+@FXML private TableColumn<Order, String> qNumCol;
 public Text totalText;
 public VBox TotalBox;
 ObservableList<MenuItem> obsOrderList = FXCollections.observableArrayList();
-ObservableList<String> obsQueueName = FXCollections.observableArrayList();
+ObservableList<Order> obsQueueList = FXCollections.observableArrayList();
 
 private Menu menu = new Menu();
 
  LinkedList<MenuItem> orderList = new LinkedList<MenuItem>();
- LinkedList<String> queueList = new LinkedList<String>();
+ LinkedList<Order> queueList = new LinkedList<Order>();
 
 
 public String getName() {
@@ -68,7 +68,8 @@ public void handleButtonClick() {
 	//System.out.println(newOrder.getName());
 	orderList.clear();
 	name.clear();
-	addName();
+	queueList.add(newOrder);
+	nameAdded();
 	System.out.println(newOrder.getName());
 	
 	
@@ -183,12 +184,12 @@ public void itemRemoved() {
 	currentOrder.setItems(removeItemObs());
 }
 
-public void addName() {
-	queueList.add(newOrder.getName());
-}
+/*public void addName() {
+	queueList.add(newOrder);
+}*/
 
 public void nameAdded() {
-	qView.setItems(obsQueueName);
+	qView.setItems(obsQueueList);
 }
 @Override
 public void initialize(java.net.URL location, ResourceBundle resources) {
@@ -198,8 +199,10 @@ public void initialize(java.net.URL location, ResourceBundle resources) {
 	itemNameCol.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
 	itemPriceCol.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("price"));
 	
-	qNameCol.setCellValueFactory(new PropertyValueFactory<String, String>("Customer Name"));
-	qNumCol.setCellValueFactory(new PropertyValueFactory<String, String>("Queue #"));
+	qNameCol.setCellValueFactory(new PropertyValueFactory<Order, String>("name"));
+	qNumCol.setCellValueFactory(new PropertyValueFactory<Order, String>("Queue #"));
+	
+	qView.setItems(getQueueName());
 	
 }
 
@@ -219,9 +222,9 @@ public ObservableList<MenuItem> removeItemObs(){
 	return obsOrderList;
 }
 
-public ObservableList<String> getQueueName(){
-	obsQueueName.add(queueList.getLast());
+public ObservableList<Order> getQueueName(){
+	obsQueueList.add(queueList.getLast());
 	
-	return obsQueueName;
+	return obsQueueList;
 }
 }
