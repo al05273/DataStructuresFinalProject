@@ -64,9 +64,12 @@ private LinkedList<Order> orderList2 = new LinkedList<Order>();
  }
  public void setOrderNames() {
 	//System.out.println(orderList2.size());
-	 
+	 clearWindow();
 	 switch (orderList2.size()) {
 	 
+	 case 0:{
+		 break;
+	 }
 	
 	 case 1:{	 
 		 	text0.setText(orderList2.get(0).getName());
@@ -153,41 +156,41 @@ public void initialize(URL location, ResourceBundle resources) {
 
 
 
-public void changeToRestBtn(ActionEvent event) throws IOException {
-	Parent restGui = FXMLLoader.load(getClass().getResource("GUI.fxml"));
-	Scene restGuiScene = new Scene(restGui);
-	Stage window = (Stage)((javafx.scene.Node) event.getSource()).getScene().getWindow();
-	window.setScene(restGuiScene);
-	window.show();
-	
-}
+
 public void orderCompleteBtn() {
-	
+	clearWindow();
 	 
+
+	 orderList2.removeFirst();
+	 setOrderNames();
+}
+public void clearWindow() {
 	 switch (orderList2.size()) {
-	 
+	 case 0:{
+		 break;
+	 }
 		
 	 case 1:{	 
-		 AnchorPane0.getChildren().removeAll();;
+		 	AnchorPane0.getChildren().removeAll();
 		 
 		 
 		 }
 		 case 2:{
 		
 			
-			 AnchorPane0.getChildren().removeAll();;
+			 AnchorPane0.getChildren().removeAll();
 			 AnchorPane1.getChildren().removeAll();
 			
 		 }
 		 case 3:{
 			
-			 AnchorPane0.getChildren().removeAll();;
+			 AnchorPane0.getChildren().removeAll();
 			 AnchorPane1.getChildren().removeAll();
 			 AnchorPane2.getChildren().removeAll();
 			
 		 }
 		 case 4:{
-			 AnchorPane0.getChildren().removeAll();;
+			 AnchorPane0.getChildren().removeAll();
 			 AnchorPane1.getChildren().removeAll();
 			 AnchorPane2.getChildren().removeAll();
 			 AnchorPane3.getChildren().removeAll();
@@ -198,7 +201,7 @@ public void orderCompleteBtn() {
 		 case 5:{
 			
 	
-			 AnchorPane0.getChildren().removeAll();;
+			 AnchorPane0.getChildren().removeAll();
 			 AnchorPane1.getChildren().removeAll();
 			 AnchorPane2.getChildren().removeAll();
 			 AnchorPane3.getChildren().removeAll();
@@ -206,7 +209,7 @@ public void orderCompleteBtn() {
 		
 		 }
 		 default:{
-			 AnchorPane0.getChildren().removeAll();;
+			 AnchorPane0.getChildren().removeAll();
 			 AnchorPane1.getChildren().removeAll();
 			 AnchorPane2.getChildren().removeAll();
 			 AnchorPane3.getChildren().removeAll();
@@ -217,7 +220,5 @@ public void orderCompleteBtn() {
 	 
 	
 	 }
-	 orderList2.removeFirst();
-	 setOrderNames();
 }
 }
