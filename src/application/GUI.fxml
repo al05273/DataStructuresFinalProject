@@ -16,9 +16,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="884.0" prefWidth="843.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <Pane maxHeight="866.0" maxWidth="866.0" minHeight="866.0" minWidth="828.0" prefHeight="866.0" prefWidth="828.0" style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+      <Pane layoutX="6.0" layoutY="6.0" maxHeight="876.0" maxWidth="866.0" minHeight="866.0" minWidth="828.0" prefHeight="876.0" prefWidth="842.0" style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
             <Text layoutX="13.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENTREE">
                <font>
@@ -173,11 +173,6 @@
                       <TableColumn fx:id="itemPriceCol" minWidth="0.0" prefWidth="69.3333740234375" text="Price" />
                     </columns>
                   </TableView>
-               </children>
-            </VBox>
-            <VBox layoutX="456.0" layoutY="380.0" prefHeight="73.0" prefWidth="106.0">
-               <children>
-                  <VBox prefHeight="13.0" prefWidth="100.0" />
                </children>
             </VBox>
             <VBox fx:id="TotalBox" layoutX="698.0" layoutY="759.0" prefHeight="86.0" prefWidth="100.0">

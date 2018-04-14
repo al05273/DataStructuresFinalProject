@@ -185,7 +185,7 @@ public void minusCokeClick(){
 public void plusCokeClick(){
 	orderList.add(menu.getCoke());
 	itemAdded();
-}
+}  
 
 public void itemAdded() {
 	calcTotal();

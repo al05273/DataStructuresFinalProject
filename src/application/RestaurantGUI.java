@@ -1,6 +1,9 @@
 package application;
 import javafx.*;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.URL;
@@ -22,8 +25,10 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -40,7 +45,7 @@ import javafx.stage.Stage;
 
 
 public class RestaurantGUI implements Initializable{
-	
+	 
 @FXML	public Text text0;
 @FXML	public Text text1;
 @FXML  	public Text text2;
@@ -50,106 +55,46 @@ public class RestaurantGUI implements Initializable{
 	 	
 	 	
 private LinkedList<Order> orderList2 = new LinkedList<Order>();
-@FXML	public AnchorPane AnchorPane0;
-@FXML	public AnchorPane AnchorPane1;
-@FXML	public AnchorPane AnchorPane2;
-@FXML	public AnchorPane AnchorPane3;
-@FXML	public AnchorPane AnchorPane4;
-@FXML	public AnchorPane AnchorPane5;
-  
+@FXML private TableView<MenuItem> order0;
+@FXML private TableView<MenuItem> order1;
+@FXML private TableView<MenuItem> order2;
+@FXML private TableView<MenuItem> order3;
+@FXML private TableView<MenuItem> order4;
+@FXML private TableView<MenuItem> order5;
+
+@FXML private TableColumn<MenuItem, String> itemNameCol0;
+@FXML private TableColumn<MenuItem, String> itemNameCol1;
+@FXML private TableColumn<MenuItem, String> itemNameCol2;
+@FXML private TableColumn<MenuItem, String> itemNameCol3;
+@FXML private TableColumn<MenuItem, String> itemNameCol4;
+@FXML private TableColumn<MenuItem, String> itemNameCol5;
+
+
+
+ObservableList<ObservableList<MenuItem>> obsOrderList = FXCollections.observableArrayList();
+
+ObservableList<MenuItem> obsOrderList0 = FXCollections.observableArrayList();
+ObservableList<MenuItem> obsOrderList1 = FXCollections.observableArrayList();
+ObservableList<MenuItem> obsOrderList2 = FXCollections.observableArrayList();
+ObservableList<MenuItem> obsOrderList3 = FXCollections.observableArrayList();
+ObservableList<MenuItem> obsOrderList4 = FXCollections.observableArrayList();
+ObservableList<MenuItem> obsOrderList5 = FXCollections.observableArrayList();
+
  public void setList(Order newOrder) {
 	 orderList2.add(newOrder);
-	 setOrderNames();
-	 
- }
- public void setOrderNames() {
-	//System.out.println(orderList2.size());
-	 clearWindow();
-	 switch (orderList2.size()) {
-	 
-	 case 0:{
-		 break;
-	 }
-	
-	 case 1:{	 
-		 	text0.setText(orderList2.get(0).getName());
-		 	AnchorPane0.getChildren().add(orderList2.get(0).showOrder());
-		 
-		 }
-		 case 2:{
-			 text0.setText(orderList2.get(0).getName());
-			 text1.setText(orderList2.get(1).getName());
-		
-			 AnchorPane0.getChildren().add(orderList2.get(0).showOrder());
-			 AnchorPane1.getChildren().add(orderList2.get(1).showOrder());
-			
-	
-		 }
-		 case 3:{
-			 text0.setText(orderList2.get(0).getName());
-			 text1.setText(orderList2.get(1).getName());
-			 text2.setText(orderList2.get(2).getName());
-		
-			 AnchorPane0.getChildren().add(orderList2.get(0).showOrder());
-			 AnchorPane1.getChildren().add(orderList2.get(1).showOrder());
-			 AnchorPane2.getChildren().add(orderList2.get(2).showOrder());
-	
-		 }
-		 case 4:{
-			 text0.setText(orderList2.get(0).getName());
-			 text1.setText(orderList2.get(1).getName());
-			 text2.setText(orderList2.get(2).getName());
-			 text3.setText(orderList2.get(3).getName());
-			 
-		
-			 AnchorPane0.getChildren().add(orderList2.get(0).showOrder());
-			 AnchorPane1.getChildren().add(orderList2.get(1).showOrder());
-			 AnchorPane2.getChildren().add(orderList2.get(2).showOrder());
-			 AnchorPane3.getChildren().add(orderList2.get(3).showOrder());
-	
-	
-		 }
-		 case 5:{
-			 text0.setText(orderList2.get(0).getName());
-			 text1.setText(orderList2.get(1).getName());
-			 text2.setText(orderList2.get(2).getName());
-			 text3.setText(orderList2.get(3).getName());
-			 text4.setText(orderList2.get(4).getName());
-		
-			 AnchorPane0.getChildren().add(orderList2.get(0).showOrder());
-			 AnchorPane1.getChildren().add(orderList2.get(1).showOrder());
-			 AnchorPane2.getChildren().add(orderList2.get(2).showOrder());
-			 AnchorPane3.getChildren().add(orderList2.get(3).showOrder());
-			 AnchorPane4.getChildren().add(orderList2.get(4).showOrder());
-	
-			 
-		 }
-		 default:{
-			 /*
-			 text0.setText(orderList2.get(0).getName());
-			 text1.setText(orderList2.get(1).getName());
-			 text2.setText(orderList2.get(2).getName());
-			 text3.setText(orderList2.get(3).getName());
-			 text4.setText(orderList2.get(4).getName());
-			 text5.setText(orderList2.get(5).getName());
-			 AnchorPane0.getChildren().add(orderList2.get(0).showOrder());
-			 AnchorPane1.getChildren().add(orderList2.get(1).showOrder());
-			 AnchorPane2.getChildren().add(orderList2.get(2).showOrder());
-			 AnchorPane3.getChildren().add(orderList2.get(3).showOrder());
-			 AnchorPane4.getChildren().add(orderList2.get(4).showOrder());
-			 AnchorPane5.getChildren().add(orderList2.get(5).showOrder());
-			 */
-			 
-		 }
-	 
-	
-	 }
-	 
- }
+	 getCurrentOrderObs();
 
-@Override
-public void initialize(URL location, ResourceBundle resources) {
-	// TODO Auto-generated method stub
+	 
+
+	 
+	
+	 }
+	 
+ 
+
+
+
+public void setOrderNames() {
 	
 }
 
@@ -158,67 +103,93 @@ public void initialize(URL location, ResourceBundle resources) {
 
 
 public void orderCompleteBtn() {
-	clearWindow();
-	 
-
-	 orderList2.removeFirst();
-	 setOrderNames();
+	orderList2.removeFirst();
+	getCurrentOrderObs();
 }
 public void clearWindow() {
-	 switch (orderList2.size()) {
-	 case 0:{
-		 break;
-	 }
+}
+
+@Override
+public void initialize(java.net.URL location, ResourceBundle resources) {
+	obsOrderList.addAll(obsOrderList0,obsOrderList1,obsOrderList2,obsOrderList3,obsOrderList4,obsOrderList5);
+	itemNameCol0.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
+	itemNameCol1.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
+	itemNameCol2.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
+	itemNameCol3.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
+	itemNameCol4.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
+	itemNameCol5.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
+	
+	
+}
+public void getCurrentOrderObs(){
+	
+		updateLists();
 		
-	 case 1:{	 
-		 	AnchorPane0.getChildren().removeAll();
-		 
-		 
-		 }
-		 case 2:{
 		
-			
-			 AnchorPane0.getChildren().removeAll();
-			 AnchorPane1.getChildren().removeAll();
-			
-		 }
-		 case 3:{
-			
-			 AnchorPane0.getChildren().removeAll();
-			 AnchorPane1.getChildren().removeAll();
-			 AnchorPane2.getChildren().removeAll();
-			
-		 }
-		 case 4:{
-			 AnchorPane0.getChildren().removeAll();
-			 AnchorPane1.getChildren().removeAll();
-			 AnchorPane2.getChildren().removeAll();
-			 AnchorPane3.getChildren().removeAll();
-	
-	
-	
-		 }
-		 case 5:{
-			
-	
-			 AnchorPane0.getChildren().removeAll();
-			 AnchorPane1.getChildren().removeAll();
-			 AnchorPane2.getChildren().removeAll();
-			 AnchorPane3.getChildren().removeAll();
-			 AnchorPane4.getChildren().removeAll();
 		
-		 }
-		 default:{
-			 AnchorPane0.getChildren().removeAll();
-			 AnchorPane1.getChildren().removeAll();
-			 AnchorPane2.getChildren().removeAll();
-			 AnchorPane3.getChildren().removeAll();
-			 AnchorPane4.getChildren().removeAll();
-			 AnchorPane5.getChildren().removeAll();
-			 
-		 }
-	 
+		order0.setItems(obsOrderList.get(0));
+		order1.setItems(obsOrderList.get(1));
+		order2.setItems(obsOrderList.get(2));
+		order3.setItems(obsOrderList.get(3));
+		order4.setItems(obsOrderList.get(4));
+		order5.setItems(obsOrderList.get(5));
+		
+		
+
+
+}
+
+
+
+
+public void updateLists() {
 	
-	 }
+	obsOrderList0.clear();
+	obsOrderList1.clear();
+	obsOrderList2.clear();
+	obsOrderList3.clear();
+	obsOrderList4.clear();
+	obsOrderList5.clear();
+	int m = orderList2.size();
+	if(m>0) {
+		
+		for(int i = 0; i <orderList2.get(0).getOrderItems().size();i++) {
+			obsOrderList0.addAll(orderList2.get(0).getOrderItems().get(i));
+		}text0.setText(orderList2.get(0).getName());
+		if(m>1) {
+			for(int i = 0; i <orderList2.get(1).getOrderItems().size();i++) {
+				obsOrderList1.addAll(orderList2.get(1).getOrderItems().get(i));
+			}text1.setText(orderList2.get(1).getName());
+			if (m>2) {
+				for(int i = 0; i <orderList2.get(2).getOrderItems().size();i++) {
+					obsOrderList2.addAll(orderList2.get(2).getOrderItems().get(i));
+				}text2.setText(orderList2.get(2).getName());
+				if(m>3) {
+					for(int i = 0; i <orderList2.get(3).getOrderItems().size();i++) {
+						obsOrderList3.addAll(orderList2.get(3).getOrderItems().get(i));
+					}text3.setText(orderList2.get(3).getName());
+					if(m>4) {
+						for(int i = 0; i <orderList2.get(4).getOrderItems().size();i++) {
+							obsOrderList4.addAll(orderList2.get(4).getOrderItems().get(i));
+						}	text4.setText(orderList2.get(4).getName());
+						if (m>5) {
+							for(int i = 0; i <orderList2.get(5).getOrderItems().size();i++) {
+								obsOrderList5.addAll(orderList2.get(5).getOrderItems().get(i));
+							}text5.setText(orderList2.get(5).getName());
+						}
+					}
+				}
+			}
+		}
+	}
+	obsOrderList.clear();
+	obsOrderList.addAll(obsOrderList0,obsOrderList1,obsOrderList2,obsOrderList3,obsOrderList4,obsOrderList5);
+}
+
+
+
+public void removeItemObs(){
+
+	
 }
 }

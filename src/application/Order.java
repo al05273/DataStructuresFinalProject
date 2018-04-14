@@ -16,7 +16,7 @@ public class Order extends Application{
   private ArrayList <MenuItem> sideList = new ArrayList();
   private ArrayList <MenuItem> entreeList = new ArrayList();
   private Menu menu;
-  
+    
   
   public Order(String name, double price, LinkedList <MenuItem> orderItems){
 	  this.name = name;
