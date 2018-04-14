@@ -158,7 +158,7 @@
                   <Font size="42.0" />
                </font>
             </Text>
-            <Button fx:id="button" layoutX="105.0" layoutY="772.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="43.0" prefWidth="351.0" text="Submit" />
+            <Button fx:id="button" layoutX="105.0" layoutY="772.0" mnemonicParsing="false" onAction="#handleButtonClick" onMouseClicked="#handleButtonClick" prefHeight="43.0" prefWidth="351.0" text="Submit" />
             <TextField fx:id="name" layoutX="228.0" layoutY="712.0" prefHeight="43.0" prefWidth="316.0" promptText="Name" />
             <Text layoutX="39.0" layoutY="740.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME FOR ORDER:">
                <font>

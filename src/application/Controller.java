@@ -4,14 +4,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
-
+import javafx.*;
 import javax.print.DocFlavor.URL;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
@@ -22,8 +26,24 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+
+
+
+
 
 public class Controller implements Initializable {
+	
+	
+	
+	
+	
+FXMLLoader loader = new FXMLLoader();
+Parent restGui;
+Scene restGuiScene;
+RestaurantGUI controller;
+Stage window = new Stage();
 public Button button;
 public TextField name;
 private double total =0;
@@ -56,13 +76,22 @@ public double calcTotal() {
 	this.total =cost;
 	return this.total;
 }
-public void handleButtonClick() {
+public void handleButtonClick() throws IOException {
+	
+	if (!this.orderList.isEmpty() && !this.name.getText().isEmpty()) {
+	
 
-	Order newOrder = new Order(getName(), calcTotal(), this.orderList);
-	//System.out.println(newOrder.getName());
+	Order newOrder = new Order(getName(), calcTotal(), (LinkedList<MenuItem>)this.orderList.clone());
+	controller.setList(newOrder);
 	orderList.clear();
 	name.clear();
+	name.setText(null);
+	obsOrderList.clear();
+	itemRemoved();
 	
+
+	
+	}
 	
 }
 
@@ -176,12 +205,23 @@ public void itemRemoved() {
 }
 @Override
 public void initialize(java.net.URL location, ResourceBundle resources) {
+	try {
+	loader.setLocation(getClass().getResource("RestaurantGUI.fxml"));
+	
+	restGui = loader.load();
+	restGuiScene = new Scene(restGui);
+	controller = loader.getController();
+	window.setScene(restGuiScene);
+	window.show();
 	
 	totalText.setText("$" + total);
 	
 	itemNameCol.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
 	itemPriceCol.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("price"));
-	
+} catch (IOException e) {
+		
+		e.printStackTrace();
+	}
 }
 public ObservableList<MenuItem> getCurrentOrderObs(){
 	
@@ -197,5 +237,17 @@ public ObservableList<MenuItem> removeItemObs(){
 		obsOrderList.add(orderList.get(i));
 	}
 	return obsOrderList;
+}
+
+// call Restaurant GUI below
+
+
+public void changeToRestBtn(ActionEvent event) throws IOException { 
+
+	
+	//Stage window = (Stage)((javafx.scene.Node) event.getSource()).getScene().getWindow();
+	window.setScene(restGuiScene);
+	window.show();
+	
 }
 }

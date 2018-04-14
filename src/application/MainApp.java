@@ -15,6 +15,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+    	
         Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
         primaryStage.setTitle("Registration Form FXML Application");
         primaryStage.setScene(new Scene(root));

@@ -14,7 +14,7 @@ public class MenuItem{
   }
 
   public enum itemType{
-    DRINK, SIDE, ENTREE;
+    DRINK, SIDE, ENTREE
 
   }
 
@@ -38,10 +38,10 @@ public void setDescription(String description) {
 public itemType getType() {
 	return type;
 }
-
+ 
 public void setType(String type) {
 	
-	itemType.valueOf(type.toUpperCase());
+	this.type = itemType.valueOf(type.toUpperCase());
 	
 }
 
