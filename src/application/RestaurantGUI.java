@@ -122,6 +122,7 @@ private LinkedList<Order> orderList2 = new LinkedList<Order>();
 			 
 		 }
 		 default:{
+			 /*
 			 text0.setText(orderList2.get(0).getName());
 			 text1.setText(orderList2.get(1).getName());
 			 text2.setText(orderList2.get(2).getName());
@@ -134,6 +135,7 @@ private LinkedList<Order> orderList2 = new LinkedList<Order>();
 			 AnchorPane3.getChildren().add(orderList2.get(3).showOrder());
 			 AnchorPane4.getChildren().add(orderList2.get(4).showOrder());
 			 AnchorPane5.getChildren().add(orderList2.get(5).showOrder());
+			 */
 			 
 		 }
 	 
@@ -159,7 +161,7 @@ public void changeToRestBtn(ActionEvent event) throws IOException {
 	window.show();
 	
 }
-public void orderCompleteBtn(ActionEvent event) {
+public void orderCompleteBtn() {
 	
 	 
 	 switch (orderList2.size()) {
