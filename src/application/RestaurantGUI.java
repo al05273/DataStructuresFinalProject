@@ -150,12 +150,20 @@ public void updateLists() {
 	obsOrderList3.clear();
 	obsOrderList4.clear();
 	obsOrderList5.clear();
+	text0.setText("Name");
+	text1.setText("Name");
+	text2.setText("Name");
+	text3.setText("Name");
+	text4.setText("Name");
+	text5.setText("Name");
+	
 	int m = orderList2.size();
 	if(m>0) {
 		
 		for(int i = 0; i <orderList2.get(0).getOrderItems().size();i++) {
 			obsOrderList0.addAll(orderList2.get(0).getOrderItems().get(i));
 		}text0.setText(orderList2.get(0).getName());
+		
 		if(m>1) {
 			for(int i = 0; i <orderList2.get(1).getOrderItems().size();i++) {
 				obsOrderList1.addAll(orderList2.get(1).getOrderItems().get(i));
